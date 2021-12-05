@@ -19,8 +19,8 @@ This is a simple snake game created in Python using the pygame library.
 * Install pygame
 * Run the following command in the terminal:
 ```bash
-python3 -m venv ./venv
-source ./venv/bin/activate  # activate the virtual environment on linux, mac
+python3 -m venv ./venv # Create a virtual environment
+source /venv/bin/activate  # activate the virtual environment on linux, mac
 .\venv\Scripts\activate  # activate the virtual environment on windows
 pip install -r requirements.txt
 ```

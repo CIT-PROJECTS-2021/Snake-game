@@ -43,4 +43,4 @@ python3 snake.py
 
 
 ### License
-* This project is licensed under the MIT license.
+* This project is licensed under the [MIT]("/LICENSE") license.

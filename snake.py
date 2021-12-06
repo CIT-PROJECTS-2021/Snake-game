@@ -165,6 +165,10 @@ def pause():
                     # unpause the game
                     pygame.mixer.music.play(-1)
                     return
+            # if user clicks on the window, quit the game
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
 def welcome():
     # creating font object my_font
@@ -176,10 +180,11 @@ def welcome():
 
     # instructing user to press P to start the game
     press_p_surface = instruction_font.render('Press P to Start the Game', True, RED)
-
+    press_q_surface = instruction_font.render('Press Q to Quit', True, RED)
     #  display text
     game_window.blit(welcome_surface, (WINDOWX//2 - welcome_surface.get_width()//2, WINDOWY//2 - welcome_surface.get_height()//2))
     game_window.blit(press_p_surface, (WINDOWX//2 - press_p_surface.get_width()//2, WINDOWY//2 - press_p_surface.get_height()//2 + 50))
+    game_window.blit(press_q_surface, (WINDOWX//2 - press_q_surface.get_width()//2, WINDOWY//2 - press_q_surface.get_height()//2 + 100))
 
     # updating display
     pygame.display.flip()
@@ -191,7 +196,13 @@ def welcome():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_p:
                     main()
-    
+                if event.key == pygame.K_q:
+                    pygame.quit()
+                    quit()
+            # exit the game if user clicks on the window
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 # main game loop
 def main():
 
@@ -211,8 +222,8 @@ def main():
     score = 0
     high_score = get_high_score()
 
-    # set initial speed to 15
-    snake_speed = 15
+    # set initial speed to 5
+    snake_speed = 5
 
     # set initial fruit spawn to true
     fruit_spawn = True

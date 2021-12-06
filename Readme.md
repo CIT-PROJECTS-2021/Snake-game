@@ -3,7 +3,7 @@ This is a simple snake game created in Python using the pygame library.
 
 ### Features
 * The snake moves in a straight line.
-* The snake can turn left or right.
+* The snake can turn left or right, up or down but not back on itself.
 * The snake can eat the food.
 * The snake can die if it hits the wall or itself.
 * Save the highscore.

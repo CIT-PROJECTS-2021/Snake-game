@@ -5,7 +5,7 @@ import random
 import os
 
 
-snake_speed = 15
+snake_speed = 5
 
 # Window size
 WINDOWX = 720
@@ -173,7 +173,7 @@ def main():
     pygame.mixer.music.load('sounds/background.mp3')
     pygame.mixer.music.play(-1)
     # set volume to 50%
-    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.set_volume(0.3)
 
     # set game over to false
     game_over = False

@@ -166,9 +166,35 @@ def pause():
                     pygame.mixer.music.play(-1)
                     return
 
+def welcome():
+    # creating font object my_font
+    my_font = pygame.font.SysFont('consolas', 50)
+    instruction_font = pygame.font.SysFont('consolas', 30)
+
+    # welcome text
+    welcome_surface = my_font.render('Welcome to Snake Game', True, RED)
+
+    # instructing user to press P to start the game
+    press_p_surface = instruction_font.render('Press P to Start the Game', True, RED)
+
+    #  display text
+    game_window.blit(welcome_surface, (WINDOWX//2 - welcome_surface.get_width()//2, WINDOWY//2 - welcome_surface.get_height()//2))
+    game_window.blit(press_p_surface, (WINDOWX//2 - press_p_surface.get_width()//2, WINDOWY//2 - press_p_surface.get_height()//2 + 50))
+
+    # updating display
+    pygame.display.flip()
+
+    # listen for key press
+    # check if user pressed P
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    main()
     
 # main game loop
 def main():
+
     # play background music
     pygame.mixer.music.load('sounds/background.mp3')
     pygame.mixer.music.play(-1)
@@ -212,7 +238,7 @@ def main():
 
     # game loop
     while not game_exit:
-
+        
         # check if game is over
         if game_over:
             # if game is over, call game over function
@@ -334,7 +360,7 @@ def main():
 
 # call main function
 if __name__ == '__main__':
-    main()
+    welcome()
 
 
 # end of game

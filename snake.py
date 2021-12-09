@@ -163,7 +163,7 @@ def pause():
                     quit()
                 if event.key == pygame.K_p:
                     # unpause the game
-                    pygame.mixer.music.play(-1)
+                    # pygame.mixer.music.play(-1)
                     return
             # if user clicks on the window, quit the game
             if event.type == pygame.QUIT:

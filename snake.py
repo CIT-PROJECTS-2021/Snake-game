@@ -206,11 +206,12 @@ def welcome():
 # main game loop
 def main():
 
-    # play background music
-    pygame.mixer.music.load('sounds/background.mp3')
-    pygame.mixer.music.play(-1)
-    # set volume to 50%
-    pygame.mixer.music.set_volume(0.3)
+    # pygame.init()
+    # # play background music
+    # pygame.mixer.music.load('sounds/background.mp3')
+    # pygame.mixer.music.play(-1)
+    # # set volume to 50%
+    # pygame.mixer.music.set_volume(0.3)
 
     # set game over to false
     game_over = False
@@ -323,7 +324,7 @@ def main():
                     high_score = score
                     save_high_score(high_score)
                     # play high score sound for 1 second
-                    pygame.mixer.Sound('sounds/high_score.mp3').play()
+                    # pygame.mixer.Sound('sounds/high_score.mp3').play()
                     # time.sleep(1)
                     # pygame.mixer.Sound('sounds/high_score.mp3').stop()
                 # increase speed
